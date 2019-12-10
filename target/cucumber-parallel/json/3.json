@@ -1,0 +1,147 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 8478627000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "homePageSteps.launchChrome()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Amazon product search scenario",
+        "description": "",
+        "id": "amazon-plp-test;amazon-product-search-scenario",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 21063871000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is on the Amazon home page",
+            "match": {
+              "location": "homePageSteps.user_is_on_the_Amazon_home_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7869100900,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User search for a product",
+            "match": {
+              "location": "homePageSteps.user_search_for_a_product()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 170900200,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Product List page is displayed",
+            "match": {
+              "location": "homePageSteps.product_List_page_is_displayed()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7676898200,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Select product from PLP",
+            "match": {
+              "location": "productListingPage.Select_product_from_PLP()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 823579000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User choose product quantity",
+            "match": {
+              "location": "productDetailPage.User_choose_product_quantity()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2323913900,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Add to basket",
+            "match": {
+              "location": "productDetailPage.Add_to_basket()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1377483600,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Proceed to basket",
+            "match": {
+              "location": "productDetailPage.proceed_to_basket()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 45946800,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Verify product details",
+            "match": {
+              "location": "shoppingCart.Verify_product_details()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 30800,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "Close the browser",
+            "match": {
+              "location": "homePageSteps.Close_the_browser()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@Chrome"
+          }
+        ]
+      }
+    ],
+    "name": "Amazon PLP test",
+    "description": "",
+    "id": "amazon-plp-test",
+    "keyword": "Feature",
+    "uri": "C:/Users/Gopu/eclipse-workspace/Amazon_Bdd/src/test/resources/ProductSearch.feature"
+  }
+]
