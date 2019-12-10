@@ -27,4 +27,9 @@ public class ShoppingCart extends TestBase{
 		WebElement prodTitle=driver.findElement(By.xpath("//SPAN[contains(text(),'"+title+"')]"));
 		return prodTitle.isDisplayed();
 	}
+	
+	public void verifyTotalPrice()
+	{
+		
+	}
 }
