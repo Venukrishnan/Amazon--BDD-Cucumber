@@ -16,6 +16,7 @@ public class shoppingCart extends TestBase{
 		Assert.assertTrue(sc.getProductTitle(productDetailPage.productTitle));
 		double val=productDetailPage.unitProdPrice*productDetailPage.product_qty;
 		System.out.println("Total price "+val);
+		Assert.assertTrue(sc.verifyTotalPrice(val));
 	}
 
 }

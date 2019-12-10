@@ -28,8 +28,17 @@ public class ShoppingCart extends TestBase{
 		return prodTitle.isDisplayed();
 	}
 	
-	public void verifyTotalPrice()
+	public boolean verifyTotalPrice(double totalPrice)
 	{
+		String str_totalPrice="$"+totalPrice;
 		
+		if (totalPrice > 999.99 ) {
+			StringBuffer str_totalPrice_1=new StringBuffer(str_totalPrice);
+			str_totalPrice_1.insert(2, ",");
+			str_totalPrice=str_totalPrice_1.toString();
+		}
+		System.out.println(str_totalPrice);
+		WebElement subTotal=driver.findElement(By.xpath("//SPAN[contains(text(),'"+str_totalPrice+"')]"));
+		return subTotal.isDisplayed();
 	}
 }

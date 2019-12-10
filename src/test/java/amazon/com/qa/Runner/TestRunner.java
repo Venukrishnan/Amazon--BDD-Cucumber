@@ -1,6 +1,11 @@
 package amazon.com.qa.Runner;
 
+import java.io.File;
+
+import org.junit.AfterClass;
 import org.junit.runner.RunWith;
+
+import com.cucumber.listener.Reporter;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -10,11 +15,20 @@ import cucumber.api.junit.Cucumber;
 				 ,features={"C:\\Users\\Gopu\\eclipse-workspace\\Amazon_Bdd\\src\\test\\resources\\ProductSearch.feature"}
 				 ,monochrome=true
 				 ,glue={"amazon.com.qa.stepDefinitions"}	
-				 ,format={"json:C:/Users/Gopu/eclipse-workspace/Amazon_Bdd/target/cucumber-parallel/json/3.json"}
+				 ,plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"}
 				 ,tags={"@Chrome"}
 				 ,dryRun=false
 		)
 
 public class TestRunner {
+	
+	@AfterClass
+	public static void writeExtentReport() {
+	//Reporter.loadXMLConfig (new File(FileReaderManager.getInstance().getConfigReader().getReportConfigPath()));
+	Reporter.loadXMLConfig(new File(System.getProperty("user.dir")+"/extent-config.xml"));
+	Reporter.setSystemInfo("user", System.getProperty("user.name"));
+	Reporter.setSystemInfo("os", "Mac OSX");
+	Reporter.setTestRunnerOutput("Sample test runner output message");
+	}
 
 }
