@@ -136,13 +136,13 @@ public class homePageSteps extends TestBase{
 	
 	@Then("^Close the browser$")
 	public void Close_the_browser()  {
-		//driver.quit();
+		driver.quit();
 	}
 	
 	@After
 	public void tearDown()
 	{
-		//driver.quit();
+		driver.quit();
 	}
 	
 }

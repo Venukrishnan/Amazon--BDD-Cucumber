@@ -12,7 +12,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(strict=true
-				 ,features={"C:\\Users\\Gopu\\eclipse-workspace\\Amazon_Bdd\\src\\test\\resources\\ProductSearch.feature"}
+				 ,features={"src\\test\\resources\\ProductSearch.feature"}
 				 ,monochrome=true
 				 ,glue={"amazon.com.qa.stepDefinitions"}	
 				 ,plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"}
