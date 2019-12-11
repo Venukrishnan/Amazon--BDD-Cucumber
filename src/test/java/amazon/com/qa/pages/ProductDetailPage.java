@@ -1,3 +1,16 @@
+/***************************************************************************
+
+*                                                                          *
+
+*             Page details:  This is the page file for Product detail page *
+                             Contains object and associated actions
+*             Author:        Venukrishnan VR                               *
+
+*                                                                          *
+
+*                                                                          *
+
+***************************************************************************/
 package amazon.com.qa.pages;
 
 import org.openqa.selenium.By;

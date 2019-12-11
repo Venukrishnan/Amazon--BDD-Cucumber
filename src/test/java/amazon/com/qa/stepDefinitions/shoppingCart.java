@@ -1,3 +1,16 @@
+/***************************************************************************
+
+*                                                                          *
+
+*             Page details:  This is the step definition file for shopping *
+                             cart page
+*             Author:        Venukrishnan VR                               *
+
+*                                                                          *
+
+*                                                                          *
+
+***************************************************************************/
 package amazon.com.qa.stepDefinitions;
 
 import org.junit.Assert;

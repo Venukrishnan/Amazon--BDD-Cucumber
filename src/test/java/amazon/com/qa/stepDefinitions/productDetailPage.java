@@ -1,5 +1,17 @@
 package amazon.com.qa.stepDefinitions;
+/***************************************************************************
 
+*                                                                          *
+
+*             Page details:  This is step definition file for log in page  *
+                             
+*             Author:        Venukrishnan VR                               *
+
+*                                                                          *
+
+*                                                                          *
+
+***************************************************************************/
 import org.junit.Assert;
 
 import amazon.com.qa.base.TestBase;

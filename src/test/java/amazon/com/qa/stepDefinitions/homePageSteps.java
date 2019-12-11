@@ -1,3 +1,16 @@
+/***************************************************************************
+
+*                                                                          *
+
+*             Page details:  This is the step definition file for home     *
+                             page
+*             Author:        Venukrishnan VR                               *
+
+*                                                                          *
+
+*                                                                          *
+
+***************************************************************************/
 package amazon.com.qa.stepDefinitions;
 
 import java.net.MalformedURLException;

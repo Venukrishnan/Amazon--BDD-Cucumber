@@ -1,3 +1,17 @@
+/***************************************************************************
+
+*                                                                          *
+
+*             Page details:  This is the base class where the              *
+                             initialisation are happening
+*             Author:        Venukrishnan VR                               *
+
+*                                                                          *
+
+*                                                                          *
+
+***************************************************************************/
+
 package amazon.com.qa.base;
 
 import java.io.FileInputStream;

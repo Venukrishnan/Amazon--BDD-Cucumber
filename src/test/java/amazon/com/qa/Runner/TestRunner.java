@@ -1,3 +1,17 @@
+/***************************************************************************
+
+*                                                                          *
+
+*             Page details:  This is the Test Runner class to initiate the *
+                             test execution
+*             Author:        Venukrishnan VR                               *
+
+*                                                                          *
+
+*                                                                          *
+
+***************************************************************************/
+
 package amazon.com.qa.Runner;
 
 import java.io.File;

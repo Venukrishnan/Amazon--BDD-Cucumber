@@ -3,6 +3,19 @@ package amazon.com.qa.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+/***************************************************************************
+
+*                                                                          *
+
+*             Page details:  This is the page file for Shopping cart page  *
+                             Contains object and associated actions
+*             Author:        Venukrishnan VR                               *
+
+*                                                                          *
+
+*                                                                          *
+
+***************************************************************************/
 import org.openqa.selenium.support.PageFactory;
 
 import amazon.com.qa.base.TestBase;
