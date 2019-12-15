@@ -31,7 +31,7 @@ public class ProductDetailPage extends TestBase {
 	@FindBy(xpath="//*[contains(@id,'a-autoid-0')]")
 	WebElement dd_qty;
 	
-	@FindBy(xpath="//*[contains(text(),'Added to Cart')]")
+	@FindBy(xpath="//h1[contains(text(),'Added to Cart')]")
 	WebElement label_scuccessmsg;
 	
 	@FindBy(xpath="//a[contains(text(),'Cart')]")
@@ -60,7 +60,18 @@ public class ProductDetailPage extends TestBase {
 	public double getProductUnitPrice() {
 		
 		double prodprice=0.00;
-		String price=label_unitPrice.getText();
+		String price;
+		String xpath;
+		
+		try{
+			price=label_unitPrice.getText();
+		}
+		catch(Exception e) {
+			xpath="//SPAN[contains(@id,'priceblock_saleprice')]";
+			WebElement label_unitPrice_2=driver.findElement(By.xpath(xpath));
+			price=label_unitPrice_2.getText();
+		}
+		
 		System.out.println("Price "+price);
 		int len=price.length();
 		System.out.println("len "+len);
@@ -97,7 +108,16 @@ public class ProductDetailPage extends TestBase {
 	}
 	public boolean verifyProductAdded() {
 		
-		return label_scuccessmsg.isDisplayed();
+		boolean status;
+		try {
+			status= label_scuccessmsg.isDisplayed();
+		}catch(Exception e) {
+			WebElement labael_successmsg_2=driver.findElement(By.xpath("//*[@id='attachDisplayAddBaseAlert']/div/h4"));
+			status= labael_successmsg_2.isDisplayed();
+		}
+		
+		
+		return status;
 	}
 	public void proccedtoCart(){
 		btn_cart.click();
