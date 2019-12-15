@@ -4,6 +4,7 @@
 
 
 
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -1199,3 +1200,8 @@
   </body>
 </html>
 
+=======
+Google chrome version - 78
+
+Note: Extented reporting is used and reports can be viewed from the location \Amazon_Bdd\target\cucumber-reports
+>>>>>>> 02f99cbbbbf79ece1fb3fa3b7ed3528016377227
