@@ -13,4 +13,6 @@ Maven
 
 java version 1.8
 
+Google chrome version - 78
+
 Note: Extented reporting is used and reports can be viewed from the location \Amazon_Bdd\target\cucumber-reports
