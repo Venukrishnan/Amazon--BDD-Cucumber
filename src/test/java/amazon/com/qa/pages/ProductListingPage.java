@@ -1,5 +1,7 @@
 package amazon.com.qa.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,8 +26,16 @@ public class ProductListingPage extends TestBase{
 	public void selectProduct(String index) {
 		String xpath="//img[@data-image-index='"+index+"']";
 		
-		WebElement productlink=driver.findElement(By.xpath(xpath));
-		productlink.click();
+		List<WebElement> productlink=driver.findElements(By.xpath(xpath));
+		
+		int k=productlink.size();
+		System.out.println("Elements count: "+k);
+		if (k==1) {
+			productlink.get(k-1).click();
+		}else {
+			driver.findElement(By.xpath("//img[@data-image-index='2']"));
+		}
+
 		
 	}
 

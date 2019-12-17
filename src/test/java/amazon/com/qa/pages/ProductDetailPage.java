@@ -13,10 +13,13 @@
 ***************************************************************************/
 package amazon.com.qa.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import amazon.com.qa.base.TestBase;
 
@@ -28,13 +31,13 @@ public class ProductDetailPage extends TestBase {
 	@FindBy(xpath="//*[@id='productTitle']")
 	WebElement label_producttitle;
 	
-	@FindBy(xpath="//*[contains(@id,'a-autoid-0')]")
+	@FindBy(xpath="//span[@id='a-autoid-2-announce']")
 	WebElement dd_qty;
 	
 	@FindBy(xpath="//h1[contains(text(),'Added to Cart')]")
 	WebElement label_scuccessmsg;
 	
-	@FindBy(xpath="//a[contains(text(),'Cart')]")
+	@FindBy(xpath="//*[@id='hlb-view-cart-announce' or @aria-labelledby='attach-sidesheet-view-cart-button-announce']")
 	WebElement btn_cart;
 	
 	@FindBy(xpath="//SPAN[contains(@id,'priceblock_ourprice')]")
@@ -84,19 +87,25 @@ public class ProductDetailPage extends TestBase {
 	
 	public int selectProductQuantity(int qty) {
 		int qty_1=qty-1;
+		int qty_selected;
 		
 		dd_qty.click();
 		
 		String xpath="//*[@id='quantity_"+qty_1+"']";
 		try {
-		WebElement quantity=driver.findElement(By.xpath(xpath));
-		quantity.click();
-		return 8;
+		List<WebElement> quantity=driver.findElements(By.xpath(xpath));
+		int k=quantity.size();
+		if (k==1) {
+			quantity.get(0).click();
+			qty_selected=8;
+		}else {
+			driver.findElement(By.xpath("//*[@id='quantity_0']")).click();
+			qty_selected=1;
+		}	
+		
+		return qty_selected;
 		}
 		catch(Exception e) {
-			xpath="//*[@id='quantity_0']";
-			WebElement quantity_2=driver.findElement(By.xpath(xpath));
-			quantity_2.click();
 			return 1;
 		}
 		
@@ -108,18 +117,26 @@ public class ProductDetailPage extends TestBase {
 	}
 	public boolean verifyProductAdded() {
 		
-		boolean status;
+		boolean status=false;
 		try {
+			label_scuccessmsg.click();
 			status= label_scuccessmsg.isDisplayed();
 		}catch(Exception e) {
+			System.out.println("Entered Catch block");
 			WebElement labael_successmsg_2=driver.findElement(By.xpath("//*[@id='attachDisplayAddBaseAlert']/div/h4"));
-			status= labael_successmsg_2.isDisplayed();
+			//status= labael_successmsg_2.isDisplayed();
+			String k=labael_successmsg_2.getText();
+			System.out.println("Text "+k);
+			if (k.equalsIgnoreCase("Added to Cart")) {
+				status=true;
+			}
 		}
 		
 		
 		return status;
 	}
 	public void proccedtoCart(){
+		
 		btn_cart.click();
 	}
 

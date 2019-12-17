@@ -1,5 +1,6 @@
 package amazon.com.qa.pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +15,7 @@ public class homePage extends TestBase{
 	@FindBy(xpath="//*[contains(text(),'Hello, ')]")
 	WebElement label_user;
 
-	@FindBy(xpath="//INPUT[contains(@id, 'twotabsearchtextbox')]")
+	@FindBy(xpath="//INPUT[contains(@id, 'twotabsearchtextbox')]")  //twotabsearchtextbox
 	WebElement Txt_SearchBox;
 	
 	@FindBy(xpath="/HTML[1]/BODY[1]/DIV[1]/HEADER[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/FORM[1]/DIV[2]/DIV[1]")
@@ -37,7 +38,7 @@ public class homePage extends TestBase{
 		//actions.click();
 		//actions.sendKeys(pd);
 		//actions.build().perform();
-		
+		Assert.assertTrue(Txt_SearchBox.isDisplayed());
 		Txt_SearchBox.sendKeys(pd);
 		btn_Search.click();
 	}
