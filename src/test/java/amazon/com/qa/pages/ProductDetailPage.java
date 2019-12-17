@@ -31,7 +31,7 @@ public class ProductDetailPage extends TestBase {
 	@FindBy(xpath="//*[@id='productTitle']")
 	WebElement label_producttitle;
 	
-	@FindBy(xpath="//span[@id='a-autoid-2-announce']")
+	@FindBy(xpath="//span[@class='a-dropdown-label']")
 	WebElement dd_qty;
 	
 	@FindBy(xpath="//h1[contains(text(),'Added to Cart')]")
@@ -88,9 +88,11 @@ public class ProductDetailPage extends TestBase {
 	public int selectProductQuantity(int qty) {
 		int qty_1=qty-1;
 		int qty_selected;
-		
-		dd_qty.click();
-		
+		try {
+			dd_qty.click();
+		}catch(Exception e) {
+			return 1;
+		}
 		String xpath="//*[@id='quantity_"+qty_1+"']";
 		try {
 		List<WebElement> quantity=driver.findElements(By.xpath(xpath));
